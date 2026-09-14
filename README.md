@@ -15,7 +15,7 @@ A web platform for monitoring, analyzing, and visualizing airfare price movement
 HTML • CSS • JavaScript • Python • Streamlit • Pandas • Plotly
 
 ## Demo
-**Live Website:** [Add GitHub Pages link here]
+**Live Website:** https://kirtisharma19.github.io/APIx-Airfare-Intelligence/
 
 ## Project
 Developed as a prototype for **Smart India Hackathon 2026**.
