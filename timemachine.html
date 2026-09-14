@@ -1,3 +1,436 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Airfare Time Machine</title><link rel="stylesheet" href="style.css"></head><body><header><a class="logo" href="index.html">✈ <b>APIx</b><small>Airfare Intelligence</small></a><nav><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="intelligence.html">Intelligence</a><a href="timemachine.html">Time Machine</a><a href="brief.html">Policy Brief</a><a href="chatbot.html">AI Assistant</a><a href="profile.html">Profile</a></nav><a class="login" href="login.html">Login</a></header>
-<main class="page"><div class="centerhead"><small>HISTORICAL AIRFARE REPLAY</small><h1>Airfare Time Machine ⏱</h1><p>See how a fare moved through the day.</p></div><div class="filters"><label>Route<select id="route"><option>DEL-BOM</option><option>DEL-BLR</option><option>BOM-BLR</option></select></label><label>Date<input type="date" value="2026-09-14"></label><label>Time<select id="time"><option>10:00 AM</option><option>11:00 AM</option><option>12:00 PM</option><option>01:00 PM</option></select></label><button class="btn" onclick="replay()">See Fare Situation</button></div>
-<div class="replay"><div><small>SELECTED SITUATION</small><h2 id="title">DEL-BOM · 10:00 AM</h2><strong id="price">₹4,200</strong><p>Historical fare observation</p></div><div class="replaybars"><i style="height:35%"></i><i style="height:45%"></i><i style="height:65%"></i><i style="height:88%"></i></div></div><div class="lead"><div>10 AM<strong>₹4,200</strong></div><div>11 AM<strong>₹4,350</strong></div><div>12 PM<strong>₹4,900</strong></div><div>1 PM<strong>₹5,400</strong></div></div></main><footer>Data-Driven Airfare Intelligence for India 🇮🇳</footer><script>function replay(){let t=document.getElementById('time').value,m={'10:00 AM':'₹4,200','11:00 AM':'₹4,350','12:00 PM':'₹4,900','01:00 PM':'₹5,400'};document.getElementById('title').textContent=document.getElementById('route').value+' · '+t;document.getElementById('price').textContent=m[t]}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Airfare Time Machine | APIx</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <a class="logo" href="index.html">
+        ✈ <b>APIx</b>
+        <small>Airfare Intelligence</small>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="intelligence.html">Intelligence</a>
+        <a href="timemachine.html" class="active">Time Machine</a>
+        <a href="brief.html">Policy Brief</a>
+        <a href="chatbot.html">AI Assistant</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <a class="login" href="login.html">Login</a>
+</header>
+
+
+<main class="page">
+
+    <!-- Hero -->
+    <section class="centerhead">
+        <small>HISTORICAL AIRFARE REPLAY</small>
+        <h1>Airfare Time Machine</h1>
+        <p>
+            Replay historical fare observations and understand how airfare
+            changed across the day.
+        </p>
+    </section>
+
+
+    <!-- Filters -->
+    <section class="tm-controls">
+
+        <div class="tm-field">
+            <label for="route">Route</label>
+
+            <select id="route">
+                <option value="DEL-BOM">DEL → BOM</option>
+                <option value="DEL-BLR">DEL → BLR</option>
+                <option value="BOM-BLR">BOM → BLR</option>
+                <option value="DEL-CCU">DEL → CCU</option>
+                <option value="BLR-HYD">BLR → HYD</option>
+                <option value="MAA-DEL">MAA → DEL</option>
+            </select>
+        </div>
+
+
+        <div class="tm-field">
+            <label for="date">Observation Date</label>
+            <input type="date" id="date" value="2026-09-14">
+        </div>
+
+
+        <div class="tm-field">
+            <label for="time">Time Snapshot</label>
+
+            <select id="time">
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+            </select>
+        </div>
+
+
+        <button class="btn" onclick="replayFare()">
+            Replay Fare
+        </button>
+
+    </section>
+
+
+    <!-- Selected Snapshot -->
+    <section class="tm-snapshot">
+
+        <div class="snapshot-info">
+
+            <span class="status-dot"></span>
+            <small>SELECTED HISTORICAL SITUATION</small>
+
+            <h2 id="snapshotTitle">
+                DEL → BOM · 10:00 AM
+            </h2>
+
+            <div class="snapshot-price" id="snapshotPrice">
+                ₹4,200
+            </div>
+
+            <p>
+                Historical fare observation captured during the selected
+                time snapshot.
+            </p>
+
+        </div>
+
+
+        <div class="snapshot-change">
+
+            <span>Change from previous snapshot</span>
+
+            <strong id="changeValue">
+                +3.6%
+            </strong>
+
+            <small id="changeText">
+                Fare increased from ₹4,050
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- Intraday Timeline -->
+    <section class="tm-section">
+
+        <div class="section-heading">
+            <div>
+                <small>INTRADAY FARE MOVEMENT</small>
+                <h2>Fare progression</h2>
+            </div>
+
+            <span class="data-badge">
+                Historical observations
+            </span>
+        </div>
+
+
+        <div class="fare-timeline">
+
+            <div class="fare-point">
+                <span>10 AM</span>
+                <strong id="fare10">₹4,200</strong>
+                <small>Initial</small>
+            </div>
+
+            <div class="timeline-line"></div>
+
+            <div class="fare-point">
+                <span>11 AM</span>
+                <strong id="fare11">₹4,350</strong>
+                <small>+3.6%</small>
+            </div>
+
+            <div class="timeline-line"></div>
+
+            <div class="fare-point">
+                <span>12 PM</span>
+                <strong id="fare12">₹4,900</strong>
+                <small>+12.5%</small>
+            </div>
+
+            <div class="timeline-line"></div>
+
+            <div class="fare-point highlight">
+                <span>1 PM</span>
+                <strong id="fare1">₹5,400</strong>
+                <small>Peak</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Insight Cards -->
+    <section class="tm-grid">
+
+        <div class="tm-card">
+            <small>LOWEST OBSERVED</small>
+            <h3 id="lowestFare">₹4,200</h3>
+            <p>Lowest fare in the selected replay window.</p>
+        </div>
+
+
+        <div class="tm-card">
+            <small>PEAK OBSERVED</small>
+            <h3 id="peakFare">₹5,400</h3>
+            <p>Highest fare recorded in the selected window.</p>
+        </div>
+
+
+        <div class="tm-card">
+            <small>INTRADAY CHANGE</small>
+            <h3 id="intradayChange">+28.6%</h3>
+            <p>Movement between the lowest and peak fare.</p>
+        </div>
+
+    </section>
+
+
+    <!-- Methodology -->
+    <section class="tm-method">
+
+        <div>
+            <small>HOW IT WORKS</small>
+            <h2>Historical fare reconstruction</h2>
+        </div>
+
+        <p>
+            APIx stores timestamped fare observations from the ingestion
+            pipeline. The Time Machine uses these observations to recreate
+            the fare situation for a selected route, date and time.
+        </p>
+
+        <div class="method-flow">
+            <span>Fare Observation</span>
+            <b>→</b>
+            <span>Timestamp</span>
+            <b>→</b>
+            <span>Historical Store</span>
+            <b>→</b>
+            <span>Replay</span>
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+<footer class="site-footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+            <a class="logo" href="index.html">
+                ✈ <b>APIx</b>
+                <small>Airfare Intelligence</small>
+            </a>
+
+            <p>
+                Real-time airfare intelligence for transparent,
+                data-driven price measurement.
+            </p>
+        </div>
+
+
+        <div class="footer-column">
+            <h4>Platform</h4>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="intelligence.html">Intelligence</a>
+            <a href="timemachine.html">Time Machine</a>
+            <a href="brief.html">Policy Brief</a>
+        </div>
+
+
+        <div class="footer-column">
+            <h4>Support</h4>
+            <a href="chatbot.html">AI Assistant</a>
+            <a href="profile.html">Profile</a>
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+        </div>
+
+
+        <div class="footer-column">
+            <h4>Information</h4>
+            <a href="#">Methodology</a>
+            <a href="#">Data Sources</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+        <span>© 2026 APIx Airfare Intelligence</span>
+        <span>Prototype for Smart India Hackathon 2026</span>
+    </div>
+
+</footer>
+
+
+<script>
+
+const fareData = {
+
+    "DEL-BOM": {
+        "10:00 AM": 4200,
+        "11:00 AM": 4350,
+        "12:00 PM": 4900,
+        "01:00 PM": 5400,
+        "02:00 PM": 5250,
+        "03:00 PM": 5100
+    },
+
+    "DEL-BLR": {
+        "10:00 AM": 3800,
+        "11:00 AM": 3950,
+        "12:00 PM": 4200,
+        "01:00 PM": 4550,
+        "02:00 PM": 4400,
+        "03:00 PM": 4300
+    },
+
+    "BOM-BLR": {
+        "10:00 AM": 3100,
+        "11:00 AM": 3250,
+        "12:00 PM": 3500,
+        "01:00 PM": 3900,
+        "02:00 PM": 3750,
+        "03:00 PM": 3600
+    },
+
+    "DEL-CCU": {
+        "10:00 AM": 3600,
+        "11:00 AM": 3750,
+        "12:00 PM": 4100,
+        "01:00 PM": 4450,
+        "02:00 PM": 4300,
+        "03:00 PM": 4150
+    },
+
+    "BLR-HYD": {
+        "10:00 AM": 2800,
+        "11:00 AM": 2950,
+        "12:00 PM": 3200,
+        "01:00 PM": 3500,
+        "02:00 PM": 3350,
+        "03:00 PM": 3250
+    },
+
+    "MAA-DEL": {
+        "10:00 AM": 4700,
+        "11:00 AM": 4900,
+        "12:00 PM": 5200,
+        "01:00 PM": 5600,
+        "02:00 PM": 5450,
+        "03:00 PM": 5300
+    }
+
+};
+
+
+function formatINR(value) {
+    return "₹" + value.toLocaleString("en-IN");
+}
+
+
+function replayFare() {
+
+    const route = document.getElementById("route").value;
+    const time = document.getElementById("time").value;
+
+    const data = fareData[route];
+
+    const currentFare = data[time];
+
+    document.getElementById("snapshotTitle").textContent =
+        route.replace("-", " → ") + " · " + time;
+
+    document.getElementById("snapshotPrice").textContent =
+        formatINR(currentFare);
+
+
+    const times = Object.keys(data);
+
+    document.getElementById("fare10").textContent =
+        formatINR(data[times[0]]);
+
+    document.getElementById("fare11").textContent =
+        formatINR(data[times[1]]);
+
+    document.getElementById("fare12").textContent =
+        formatINR(data[times[2]]);
+
+    document.getElementById("fare1").textContent =
+        formatINR(data[times[3]]);
+
+
+    const values = Object.values(data);
+
+    const lowest = Math.min(...values);
+    const peak = Math.max(...values);
+
+    const change = ((peak - lowest) / lowest) * 100;
+
+    document.getElementById("lowestFare").textContent =
+        formatINR(lowest);
+
+    document.getElementById("peakFare").textContent =
+        formatINR(peak);
+
+    document.getElementById("intradayChange").textContent =
+        "+" + change.toFixed(1) + "%";
+
+
+    const selectedIndex = times.indexOf(time);
+
+    let previousFare;
+
+    if (selectedIndex > 0) {
+        previousFare = data[times[selectedIndex - 1]];
+    } else {
+        previousFare = currentFare;
+    }
+
+    const snapshotChange =
+        ((currentFare - previousFare) / previousFare) * 100;
+
+    document.getElementById("changeValue").textContent =
+        (snapshotChange >= 0 ? "+" : "") +
+        snapshotChange.toFixed(1) + "%";
+
+    document.getElementById("changeText").textContent =
+        selectedIndex === 0
+        ? "Opening observation"
+        : "Compared with previous snapshot";
+
+}
+
+
+replayFare();
+
+</script>
+
+</body>
+</html>
