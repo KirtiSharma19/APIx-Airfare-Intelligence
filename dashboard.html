@@ -1,0 +1,970 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>APIx Dashboard | Airfare Intelligence</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<header>
+
+    <a class="logo" href="index.html">
+        ✈ <b>APIx</b>
+        <small>Airfare Intelligence</small>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="intelligence.html">Intelligence</a>
+        <a href="timemachine.html">Time Machine</a>
+        <a href="brief.html">Policy Brief</a>
+        <a href="chatbot.html">AI Assistant</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <a class="login" href="login.html">Login</a>
+
+</header>
+
+
+
+<main class="page">
+
+
+    <!-- DASHBOARD HEADER -->
+
+    <div class="pagehead">
+
+        <div>
+
+            <small>REAL-TIME AIRFARE PRICE INTELLIGENCE</small>
+
+            <h1>APIx Dashboard</h1>
+
+            <p>
+                Monitor domestic airfare movements, route contribution,
+                booking lead-time behaviour and data quality.
+            </p>
+
+        </div>
+
+        <span class="status">
+            ● SYSTEM ACTIVE
+        </span>
+
+    </div>
+
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <label>
+            Route
+
+            <select>
+
+                <option>All Routes</option>
+
+                <option>DEL → BOM</option>
+                <option>DEL → BLR</option>
+                <option>BOM → BLR</option>
+                <option>DEL → CCU</option>
+                <option>BLR → HYD</option>
+                <option>MAA → DEL</option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+            Booking Window
+
+            <select>
+
+                <option>All Windows</option>
+                <option>T+1</option>
+                <option>T+7</option>
+                <option>T+15</option>
+                <option>T+30</option>
+                <option>T+45</option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+            Observation Period
+
+            <select>
+
+                <option>Current Snapshot</option>
+                <option>Last 7 Days</option>
+                <option>Last 30 Days</option>
+
+            </select>
+
+        </label>
+
+
+        <label>
+            Fare Source
+
+            <select>
+
+                <option>All Sources</option>
+                <option>Airline</option>
+                <option>OTA</option>
+                <option>API Aggregator</option>
+
+            </select>
+
+        </label>
+
+    </div>
+
+
+
+    <!-- KPI SECTION -->
+
+    <div class="kpis">
+
+
+        <div>
+
+            <small>LATEST APIx</small>
+
+            <b>41.83</b>
+
+            <span>
+                Current prototype snapshot
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <small>ROUTES TRACKED</small>
+
+            <b>06</b>
+
+            <span>
+                Representative city pairs
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <small>FARE QUOTES</small>
+
+            <b>7,987</b>
+
+            <span>
+                Collected observations
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <small>BOOKING WINDOWS</small>
+
+            <b>05</b>
+
+            <span>
+                T+1 to T+45
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <small>DIRECT FARE SHARE</small>
+
+            <b>33%</b>
+
+            <span>
+                Direct-flight quote share
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- APIx TREND + ROUTE CONTRIBUTION -->
+
+    <div class="twocol">
+
+
+        <section class="panel">
+
+            <div style="display:flex;justify-content:space-between;align-items:center">
+
+                <div>
+
+                    <small style="color:#287fd0;font-size:9px;font-weight:800">
+                        INDEX MOVEMENT
+                    </small>
+
+                    <h2>APIx Trend</h2>
+
+                </div>
+
+                <span style="font-size:9px;color:#8490a1">
+                    Prototype observation
+                </span>
+
+            </div>
+
+
+            <div class="chart">
+
+                <svg
+                    viewBox="0 0 700 250"
+                    preserveAspectRatio="none"
+                >
+
+                    <line
+                        x1="0"
+                        y1="210"
+                        x2="700"
+                        y2="210"
+                        stroke="#26364c"
+                    />
+
+                    <line
+                        x1="0"
+                        y1="150"
+                        x2="700"
+                        y2="150"
+                        stroke="#26364c"
+                    />
+
+                    <line
+                        x1="0"
+                        y1="90"
+                        x2="700"
+                        y2="90"
+                        stroke="#26364c"
+                    />
+
+                    <polyline
+                        points="
+                        0,190
+                        70,205
+                        140,175
+                        210,185
+                        280,145
+                        350,155
+                        420,115
+                        490,130
+                        560,95
+                        630,115
+                        700,75
+                        "
+                        fill="none"
+                        stroke="#4da3ff"
+                        stroke-width="4"
+                    />
+
+                    <circle cx="700" cy="75" r="6" fill="#4da3ff"/>
+
+                </svg>
+
+            </div>
+
+
+            <div style="display:flex;justify-content:space-between;margin-top:10px;font-size:9px;color:#8794a4">
+
+                <span>Observation 01</span>
+                <span>Observation 12</span>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="panel">
+
+            <div style="display:flex;justify-content:space-between;align-items:center">
+
+                <div>
+
+                    <small style="color:#287fd0;font-size:9px;font-weight:800">
+                        ROUTE ANALYSIS
+                    </small>
+
+                    <h2>Route Contribution</h2>
+
+                </div>
+
+                <span style="font-size:9px;color:#8490a1">
+                    Weighted basket
+                </span>
+
+            </div>
+
+
+            <div class="bar">
+
+                <span>DEL-BOM</span>
+
+                <i style="width:82%"></i>
+
+                <b>24%</b>
+
+            </div>
+
+
+            <div class="bar">
+
+                <span>DEL-BLR</span>
+
+                <i style="width:76%"></i>
+
+                <b>23%</b>
+
+            </div>
+
+
+            <div class="bar">
+
+                <span>BOM-BLR</span>
+
+                <i style="width:58%"></i>
+
+                <b>16%</b>
+
+            </div>
+
+
+            <div class="bar">
+
+                <span>DEL-CCU</span>
+
+                <i style="width:52%"></i>
+
+                <b>14%</b>
+
+            </div>
+
+
+            <div class="bar">
+
+                <span>BLR-HYD</span>
+
+                <i style="width:43%"></i>
+
+                <b>12%</b>
+
+            </div>
+
+
+            <div class="bar">
+
+                <span>MAA-DEL</span>
+
+                <i style="width:39%"></i>
+
+                <b>11%</b>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- ROUTE SNAPSHOT -->
+
+    <section class="panel" style="margin:17px 0">
+
+        <div style="display:flex;justify-content:space-between;align-items:center">
+
+            <div>
+
+                <small style="color:#287fd0;font-size:9px;font-weight:800">
+                    REPRESENTATIVE BASKET
+                </small>
+
+                <h2>Route Fare Snapshot</h2>
+
+            </div>
+
+            <a
+                class="link"
+                href="basket.html"
+                style="font-size:10px"
+            >
+                View Basket Analysis →
+            </a>
+
+        </div>
+
+
+        <table class="data-table">
+
+            <tr>
+
+                <th>ROUTE</th>
+                <th>WEIGHT</th>
+                <th>T+1</th>
+                <th>T+7</th>
+                <th>T+15</th>
+                <th>T+30</th>
+                <th>T+45</th>
+                <th>MOVEMENT</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>DEL → BOM</td>
+
+                <td>20%</td>
+
+                <td>₹7,240</td>
+
+                <td>₹6,120</td>
+
+                <td>₹5,480</td>
+
+                <td>₹4,920</td>
+
+                <td>₹4,610</td>
+
+                <td style="color:#d17b22">+6.2%</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>DEL → BLR</td>
+
+                <td>20%</td>
+
+                <td>₹7,580</td>
+
+                <td>₹6,420</td>
+
+                <td>₹5,720</td>
+
+                <td>₹5,280</td>
+
+                <td>₹4,940</td>
+
+                <td style="color:#d17b22">+3.8%</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>BOM → BLR</td>
+
+                <td>15%</td>
+
+                <td>₹5,960</td>
+
+                <td>₹5,140</td>
+
+                <td>₹4,620</td>
+
+                <td>₹4,180</td>
+
+                <td>₹3,980</td>
+
+                <td style="color:#d17b22">+2.4%</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>DEL → CCU</td>
+
+                <td>15%</td>
+
+                <td>₹6,430</td>
+
+                <td>₹5,510</td>
+
+                <td>₹4,980</td>
+
+                <td>₹4,620</td>
+
+                <td>₹4,430</td>
+
+                <td style="color:#16825a">+1.8%</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>BLR → HYD</td>
+
+                <td>15%</td>
+
+                <td>₹4,680</td>
+
+                <td>₹4,020</td>
+
+                <td>₹3,650</td>
+
+                <td>₹3,390</td>
+
+                <td>₹3,210</td>
+
+                <td style="color:#16825a">+1.2%</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>MAA → DEL</td>
+
+                <td>15%</td>
+
+                <td>₹7,010</td>
+
+                <td>₹6,120</td>
+
+                <td>₹5,640</td>
+
+                <td>₹5,220</td>
+
+                <td>₹5,030</td>
+
+                <td style="color:#d17b22">+4.1%</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+
+
+    <!-- LEAD TIME + SYSTEM HEALTH -->
+
+    <div class="twocol">
+
+
+        <section class="panel">
+
+            <div>
+
+                <small style="color:#287fd0;font-size:9px;font-weight:800">
+                    BOOKING BEHAVIOUR
+                </small>
+
+                <h2>Lead-Time Analysis</h2>
+
+                <p style="font-size:10px;color:#8490a1">
+                    Median observed fare across the representative route basket.
+                </p>
+
+            </div>
+
+
+            <div class="lead">
+
+                <div>
+
+                    T+1
+
+                    <strong>₹7,240</strong>
+
+                    <span style="color:#d17b22">
+                        Near departure
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    T+7
+
+                    <strong>₹6,120</strong>
+
+                    <span>
+                        1 week ahead
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    T+15
+
+                    <strong>₹5,480</strong>
+
+                    <span>
+                        15 days ahead
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    T+30
+
+                    <strong>₹4,920</strong>
+
+                    <span>
+                        1 month ahead
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    T+45
+
+                    <strong>₹4,610</strong>
+
+                    <span>
+                        45 days ahead
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="panel">
+
+            <div>
+
+                <small style="color:#287fd0;font-size:9px;font-weight:800">
+                    PLATFORM MONITORING
+                </small>
+
+                <h2>System Health</h2>
+
+            </div>
+
+
+            <div style="display:grid;gap:12px;margin-top:18px">
+
+
+                <div style="display:flex;justify-content:space-between;align-items:center">
+
+                    <span style="font-size:11px">
+                        🟢 Data Ingestion
+                    </span>
+
+                    <b style="font-size:9px;color:#16825a">
+                        OPERATIONAL
+                    </b>
+
+                </div>
+
+
+                <div style="display:flex;justify-content:space-between;align-items:center">
+
+                    <span style="font-size:11px">
+                        🟢 Data Processing
+                    </span>
+
+                    <b style="font-size:9px;color:#16825a">
+                        OPERATIONAL
+                    </b>
+
+                </div>
+
+
+                <div style="display:flex;justify-content:space-between;align-items:center">
+
+                    <span style="font-size:11px">
+                        🟢 Index Engine
+                    </span>
+
+                    <b style="font-size:9px;color:#16825a">
+                        OPERATIONAL
+                    </b>
+
+                </div>
+
+
+                <div style="display:flex;justify-content:space-between;align-items:center">
+
+                    <span style="font-size:11px">
+                        🟡 Historical Backtest
+                    </span>
+
+                    <b style="font-size:9px;color:#b8791e">
+                        PENDING DATA
+                    </b>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                class="link"
+                href="intelligence.html"
+                style="display:block;margin-top:20px"
+            >
+                View Intelligence Center →
+            </a>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- SOURCE COVERAGE -->
+
+    <section class="panel" style="margin:17px 0">
+
+        <div style="display:flex;justify-content:space-between;align-items:center">
+
+            <div>
+
+                <small style="color:#287fd0;font-size:9px;font-weight:800">
+                    DATA COVERAGE
+                </small>
+
+                <h2>Source & Data Quality</h2>
+
+            </div>
+
+            <a
+                href="fingerprint.html"
+                class="link"
+                style="font-size:10px"
+            >
+                Inspect Fare Fingerprints →
+            </a>
+
+        </div>
+
+
+        <div
+            style="
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:12px;
+            margin-top:20px;
+            "
+        >
+
+            <div
+                style="
+                background:#f6f9fc;
+                padding:17px;
+                border-radius:9px;
+                "
+            >
+
+                <small style="font-size:8px;color:#8491a0">
+                    TOTAL OBSERVATIONS
+                </small>
+
+                <strong style="display:block;font-size:21px;margin-top:7px">
+                    7,987
+                </strong>
+
+            </div>
+
+
+            <div
+                style="
+                background:#f6f9fc;
+                padding:17px;
+                border-radius:9px;
+                "
+            >
+
+                <small style="font-size:8px;color:#8491a0">
+                    CURRENT QUOTES
+                </small>
+
+                <strong style="display:block;font-size:21px;margin-top:7px">
+                    4,579
+                </strong>
+
+            </div>
+
+
+            <div
+                style="
+                background:#f6f9fc;
+                padding:17px;
+                border-radius:9px;
+                "
+            >
+
+                <small style="font-size:8px;color:#8491a0">
+                    DIRECT FLIGHTS
+                </small>
+
+                <strong style="display:block;font-size:21px;margin-top:7px">
+                    33%
+                </strong>
+
+            </div>
+
+
+            <div
+                style="
+                background:#f6f9fc;
+                padding:17px;
+                border-radius:9px;
+                "
+            >
+
+                <small style="font-size:8px;color:#8491a0">
+                    COLLECTION STATUS
+                </small>
+
+                <strong style="display:block;font-size:14px;margin-top:10px;color:#16825a">
+                    ACTIVE
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PROTOTYPE NOTE -->
+
+    <div class="notice">
+
+        <strong>Prototype status:</strong>
+
+        The current dashboard demonstrates the APIx measurement workflow
+        using the available fare snapshot. Scheduled daily collection is
+        required to build the complete 30-day high-frequency time series
+        and perform the planned DGCA validation backtest.
+
+    </div>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>✈ APIx</h3>
+
+            <p>
+                Airfare Price Intelligence for India
+            </p>
+
+            <p style="margin-top:10px">
+                A CPI-oriented platform for domestic
+                airfare measurement and intelligence.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <b>Platform</b>
+
+            <a href="index.html">Home</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="intelligence.html">Intelligence</a>
+
+            <a href="timemachine.html">Time Machine</a>
+
+        </div>
+
+
+        <div>
+
+            <b>Insights</b>
+
+            <a href="basket.html">Airfare Basket</a>
+
+            <a href="anomaly.html">Anomaly Monitor</a>
+
+            <a href="fingerprint.html">Fare Fingerprint</a>
+
+            <a href="brief.html">Policy Brief</a>
+
+        </div>
+
+
+        <div>
+
+            <b>Company & Support</b>
+
+            <a href="#">About Us</a>
+
+            <a href="#">Contact Us</a>
+
+            <a href="#">FAQs</a>
+
+            <a href="chatbot.html">AI Assistant</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 APIx. All rights reserved.
+        </span>
+
+        <span>
+            Government-oriented airfare intelligence platform
+        </span>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
