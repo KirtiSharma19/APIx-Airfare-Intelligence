@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fare Fingerprinting | APIx</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="site-header">
+
+    <div class="fp-brand">
+        <span class="fp-plane">✈</span>
+
+        <div>
+            <strong>APIx</strong>
+            <small>Airfare Intelligence</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="intelligence.html" class="active">Intelligence</a>
+        <a href="timemachine.html">Time Machine</a>
+        <a href="brief.html">Policy Brief</a>
+        <a href="chatbot.html">AI Assistant</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <a href="login.html" class="fp-login">
+        Login
+    </a>
+
+</header>
+
+
+<main>
+
+    <!-- Hero -->
+    <section class="fp-hero">
+
+        <div class="fp-container">
+
+            <div class="fp-eyebrow">
+                FARE INTELLIGENCE
+            </div>
+
+            <div class="fp-hero-row">
+
+                <div>
+
+                    <h1>
+                        Fare Fingerprinting
+                    </h1>
+
+                    <p>
+                        Recognize the same flight and fare product across
+                        multiple airline and online travel sources before
+                        it enters the airfare index.
+                    </p>
+
+                </div>
+
+                <div class="fp-active">
+                    <span></span>
+                    ENGINE ACTIVE
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main Content -->
+    <section class="fp-section">
+
+        <div class="fp-container">
+
+            <!-- Intro -->
+            <div class="fp-section-title">
+
+                <div>
+
+                    <span class="fp-label">
+                        FINGERPRINT RECORD
+                    </span>
+
+                    <h2>
+                        What Fare Fingerprinting should contain
+                    </h2>
+
+                    <p>
+                        For every fare observation, APIx stores the metadata
+                        required to identify the underlying flight and fare product.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Record + Explanation -->
+            <div class="fp-record-layout">
+
+                <!-- Record -->
+                <div class="fp-record-card">
+
+                    <div class="fp-record-header">
+
+                        <div>
+
+                            <span>
+                                FINGERPRINT ID
+                            </span>
+
+                            <h3>
+                                FP-DEL-BOM-6E-XXXX
+                            </h3>
+
+                        </div>
+
+                        <div class="fp-match">
+                            ✓ MATCH READY
+                        </div>
+
+                    </div>
+
+
+                    <div class="fp-fields">
+
+                        <div>
+                            <span>Route</span>
+                            <strong>DEL → BOM</strong>
+                        </div>
+
+                        <div>
+                            <span>Airline</span>
+                            <strong>IndiGo</strong>
+                        </div>
+
+                        <div>
+                            <span>Flight</span>
+                            <strong>6E-XXXX</strong>
+                        </div>
+
+                        <div>
+                            <span>Departure</span>
+                            <strong>20 Sep 2026 · 14:00</strong>
+                        </div>
+
+                        <div>
+                            <span>Search timestamp</span>
+                            <strong>14 Sep 2026 · 10:00</strong>
+                        </div>
+
+                        <div>
+                            <span>Advance window</span>
+                            <strong>T+6</strong>
+                        </div>
+
+                        <div>
+                            <span>Fare class</span>
+                            <strong>Economy</strong>
+                        </div>
+
+                        <div>
+                            <span>Base fare</span>
+                            <strong>₹3,250</strong>
+                        </div>
+
+                        <div>
+                            <span>Taxes / fees</span>
+                            <strong>₹620</strong>
+                        </div>
+
+                        <div>
+                            <span>Total fare</span>
+                            <strong>₹3,870</strong>
+                        </div>
+
+                        <div>
+                            <span>Seats / availability</span>
+                            <strong class="fp-green">
+                                Available
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Source</span>
+                            <strong>Airline / OTA</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="fp-id">
+
+                        <span>
+                            Fingerprint constructed from
+                        </span>
+
+                        <strong>
+                            Route + Airline + Flight + Date + Departure Time
+                            + Cabin + Fare Type
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Explanation -->
+                <div class="fp-explanation">
+
+                    <span class="fp-label">
+                        WHY IT MATTERS
+                    </span>
+
+                    <h2>
+                        One flight should not become multiple observations.
+                    </h2>
+
+                    <p>
+                        The same flight may appear on an airline website and
+                        multiple online travel aggregators. Fingerprinting
+                        helps recognize these repeated listings before
+                        aggregation.
+                    </p>
+
+
+                    <div class="fp-reason">
+
+                        <div class="fp-number">
+                            01
+                        </div>
+
+                        <div>
+                            <strong>Identify</strong>
+
+                            <p>
+                                Match route, airline, flight number,
+                                date and departure time.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="fp-reason">
+
+                        <div class="fp-number">
+                            02
+                        </div>
+
+                        <div>
+                            <strong>Compare</strong>
+
+                            <p>
+                                Check whether observations represent
+                                the same underlying fare product.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="fp-reason">
+
+                        <div class="fp-number">
+                            03
+                        </div>
+
+                        <div>
+                            <strong>Deduplicate</strong>
+
+                            <p>
+                                Avoid counting repeated listings as
+                                separate observations.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Observation History -->
+    <section class="fp-section fp-grey">
+
+        <div class="fp-container">
+
+            <div class="fp-section-title fp-title-row">
+
+                <div>
+
+                    <span class="fp-label">
+                        OBSERVATION HISTORY
+                    </span>
+
+                    <h2>
+                        Same flight, multiple observations
+                    </h2>
+
+                    <p>
+                        The fare can change over time while the underlying
+                        flight identity remains the same.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="fp-table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Search Time</th>
+                            <th>Route</th>
+                            <th>Flight</th>
+                            <th>Advance</th>
+                            <th>Source</th>
+                            <th>Total Fare</th>
+                            <th>Fingerprint</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>14 Sep · 10:00</td>
+                            <td>DEL → BOM</td>
+                            <td>6E-XXXX</td>
+                            <td>T+30</td>
+                            <td>Airline</td>
+                            <td class="fp-fare">₹4,120</td>
+                            <td>
+                                <span class="fp-tag">FP-001</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>15 Sep · 10:00</td>
+                            <td>DEL → BOM</td>
+                            <td>6E-XXXX</td>
+                            <td>T+30</td>
+                            <td>OTA</td>
+                            <td class="fp-fare">₹4,350</td>
+                            <td>
+                                <span class="fp-tag">FP-001</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>16 Sep · 10:00</td>
+                            <td>DEL → BOM</td>
+                            <td>6E-XXXX</td>
+                            <td>T+30</td>
+                            <td>OTA</td>
+                            <td class="fp-fare">₹4,080</td>
+                            <td>
+                                <span class="fp-tag">FP-001</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>16 Sep · 11:00</td>
+                            <td>DEL → BOM</td>
+                            <td>6E-YYYY</td>
+                            <td>T+30</td>
+                            <td>Airline</td>
+                            <td class="fp-fare">₹4,290</td>
+                            <td>
+                                <span class="fp-tag fp-new">FP-002</span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="fp-table-note">
+
+                <span>i</span>
+
+                <p>
+                    The first three observations share <strong>FP-001</strong>
+                    because they represent the same flight. The displayed
+                    fare changes, but the flight identity remains consistent.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Attributes -->
+    <section class="fp-section">
+
+        <div class="fp-container">
+
+            <div class="fp-section-title">
+
+                <span class="fp-label">
+                    MATCHING ATTRIBUTES
+                </span>
+
+                <h2>
+                    What creates a fare fingerprint?
+                </h2>
+
+                <p>
+                    These attributes form the observation identity used
+                    during comparison and deduplication.
+                </p>
+
+            </div>
+
+
+            <div class="fp-attribute-grid">
+
+                <div class="fp-attribute">
+                    <span>01</span>
+                    <div>
+                        <h3>Route</h3>
+                        <p>Origin and destination city pair.</p>
+                    </div>
+                </div>
+
+                <div class="fp-attribute">
+                    <span>02</span>
+                    <div>
+                        <h3>Airline</h3>
+                        <p>Marketing or operating carrier.</p>
+                    </div>
+                </div>
+
+                <div class="fp-attribute">
+                    <span>03</span>
+                    <div>
+                        <h3>Flight Number</h3>
+                        <p>Unique flight identifier.</p>
+                    </div>
+                </div>
+
+                <div class="fp-attribute">
+                    <span>04</span>
+                    <div>
+                        <h3>Departure</h3>
+                        <p>Travel date and scheduled time.</p>
+                    </div>
+                </div>
+
+                <div class="fp-attribute">
+                    <span>05</span>
+                    <div>
+                        <h3>Cabin</h3>
+                        <p>Economy and other cabin classes.</p>
+                    </div>
+                </div>
+
+                <div class="fp-attribute">
+                    <span>06</span>
+                    <div>
+                        <h3>Fare Type</h3>
+                        <p>Fare family or product category.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Same Footer -->
+<footer class="site-footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                <span class="logo-mark">✈</span>
+                <span>APIx</span>
+            </div>
+
+            <p>
+                Airfare Price Intelligence for India
+            </p>
+
+            <span>
+                CPI-oriented platform for domestic airfare measurement and intelligence.
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Platform</h4>
+
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="intelligence.html">Intelligence</a>
+            <a href="timemachine.html">Time Machine</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Insights</h4>
+
+            <a href="basket.html">Airfare Basket</a>
+            <a href="anomaly.html">Anomaly Monitor</a>
+            <a href="fingerprint.html">Fare Fingerprint</a>
+            <a href="brief.html">Policy Brief</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Company & Support</h4>
+
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQs</a>
+            <a href="chatbot.html">AI Assistant</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 APIx. All rights reserved.
+        </span>
+
+        <span>
+            Government-oriented airfare intelligence platform
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
